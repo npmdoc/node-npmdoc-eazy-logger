@@ -1,0 +1,2191 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/shakyshane/easy-logger">eazy-logger (v3.0.2)</a>
+</h1>
+<h4>Simple cli logger</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eazy-logger">module eazy-logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger">
+            function <span class="apidocSignatureSpan">eazy-logger.</span>Logger
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.compile">
+            function <span class="apidocSignatureSpan">eazy-logger.</span>compile
+            <span class="apidocSignatureSpan">(string, custom, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom">
+            function <span class="apidocSignatureSpan">eazy-logger.</span>lodash_custom
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">eazy-logger.</span>Logger.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eazy-logger.Logger">module eazy-logger.Logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.Logger">
+            function <span class="apidocSignatureSpan">eazy-logger.</span>Logger
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eazy-logger.Logger.prototype">module eazy-logger.Logger.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.addLevelMethods">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>addLevelMethods
+            <span class="apidocSignatureSpan">(items)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.canLog">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>canLog
+            <span class="apidocSignatureSpan">(level)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.clone">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>clone
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.log">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>log
+            <span class="apidocSignatureSpan">(level, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.logOne">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>logOne
+            <span class="apidocSignatureSpan">(args, msg, level, unprefixed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.mute">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>mute
+            <span class="apidocSignatureSpan">(bool)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.reset">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.resetTemps">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>resetTemps
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.setLevel">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>setLevel
+            <span class="apidocSignatureSpan">(level)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.setLevelPrefixes">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>setLevelPrefixes
+            <span class="apidocSignatureSpan">(state)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.setOnce">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>setOnce
+            <span class="apidocSignatureSpan">(path, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.setPrefix">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>setPrefix
+            <span class="apidocSignatureSpan">(prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.Logger.prototype.unprefixed">
+            function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>unprefixed
+            <span class="apidocSignatureSpan">(level, msg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eazy-logger.compile">module eazy-logger.compile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.compile.compile">
+            function <span class="apidocSignatureSpan">eazy-logger.</span>compile
+            <span class="apidocSignatureSpan">(string, custom, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.compile.Compiler">
+            function <span class="apidocSignatureSpan">eazy-logger.compile.</span>Compiler
+            <span class="apidocSignatureSpan">(custom, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.compile.clean">
+            function <span class="apidocSignatureSpan">eazy-logger.compile.</span>clean
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.compile.parse">
+            function <span class="apidocSignatureSpan">eazy-logger.compile.</span>parse
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.eazy-logger.lodash_custom">module eazy-logger.lodash_custom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.lodash_custom">
+            function <span class="apidocSignatureSpan">eazy-logger.</span>lodash_custom
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom._">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.cloneDeep">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>cloneDeep
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.constant">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>constant
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.eq">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>eq
+            <span class="apidocSignatureSpan">(value, other)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isArguments">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isArguments
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isArray">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isArrayLike">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isArrayLike
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isArrayLikeObject">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isArrayLikeObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isBuffer">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isBuffer
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isFunction">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isFunction
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isLength">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isLength
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isNative">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isNative
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isObject">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isObjectLike">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isObjectLike
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isPlainObject">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isPlainObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isString">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isString
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isSymbol">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isSymbol
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.isTypedArray">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isTypedArray
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.keys">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>keys
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.keysIn">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>keysIn
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.merge">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>merge
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.rest">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>rest
+            <span class="apidocSignatureSpan">(func, start)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.toFinite">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>toFinite
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.toInteger">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>toInteger
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.toNumber">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>toNumber
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.eazy-logger.lodash_custom.toPlainObject">
+            function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>toPlainObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>VERSION</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eazy-logger" id="apidoc.module.eazy-logger">module eazy-logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger" id="apidoc.element.eazy-logger.Logger">
+        function <span class="apidocSignatureSpan">eazy-logger.</span>Logger
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Logger = function (config) {
+
+    if (!(this instanceof Logger)) {
+        return new Logger(config);
+    }
+
+    config = config || {};
+
+    this._mute = false;
+    this.config = _.merge({}, defaults, config);
+    this.addLevelMethods(this.config.levels);
+    this.compiler = new tfunk.Compiler(this.config.custom || {}, this.config);
+    this._memo = {};
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+$ npm install eazy-logger --save
+```
+
+##Usage
+
+```js
+var logger  = require("eazy-logger").<span class="apidocCodeKeywordSpan">Logger</span>({
+    prefix: "{blue:[}{magenta:easy-logger}{blue:] }",
+    useLevelPrefixes: true
+});
+```
+
+```js
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.compile" id="apidoc.element.eazy-logger.compile">
+        function <span class="apidocSignatureSpan">eazy-logger.</span>compile
+        <span class="apidocSignatureSpan">(string, custom, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compile(string, custom, opts) {
+    opts = opts || {};
+    return parseAst(createAst(parser, string), custom, function (err) {
+        if (err) {
+            if (opts.logErrors) {
+                console.log(err.msg);
+            }
+            if (opts.failOnError) {
+                throw Error(err.msg);
+            }
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * @param prefix
+ */
+Logger.prototype.setPrefix = function (prefix) {
+    if (typeof prefix === "string") {
+        this.compiler.prefix = this.compiler.<span class="apidocCodeKeywordSpan">compile</span>(prefix, true);
+    }
+    if (typeof prefix === "function") {
+        this.compiler.prefix = prefix;
+    }
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom" id="apidoc.element.eazy-logger.lodash_custom">
+        function <span class="apidocSignatureSpan">eazy-logger.</span>lodash_custom
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lodash() {
+  // No operation performed.
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eazy-logger.Logger" id="apidoc.module.eazy-logger.Logger">module eazy-logger.Logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.Logger" id="apidoc.element.eazy-logger.Logger.Logger">
+        function <span class="apidocSignatureSpan">eazy-logger.</span>Logger
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Logger = function (config) {
+
+    if (!(this instanceof Logger)) {
+        return new Logger(config);
+    }
+
+    config = config || {};
+
+    this._mute = false;
+    this.config = _.merge({}, defaults, config);
+    this.addLevelMethods(this.config.levels);
+    this.compiler = new tfunk.Compiler(this.config.custom || {}, this.config);
+    this._memo = {};
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+$ npm install eazy-logger --save
+```
+
+##Usage
+
+```js
+var logger  = require("eazy-logger").<span class="apidocCodeKeywordSpan">Logger</span>({
+    prefix: "{blue:[}{magenta:easy-logger}{blue:] }",
+    useLevelPrefixes: true
+});
+```
+
+```js
+/**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eazy-logger.Logger.prototype" id="apidoc.module.eazy-logger.Logger.prototype">module eazy-logger.Logger.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.addLevelMethods" id="apidoc.element.eazy-logger.Logger.prototype.addLevelMethods">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>addLevelMethods
+        <span class="apidocSignatureSpan">(items)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addLevelMethods = function (items) {
+    Object.keys(items).forEach(function (item) {
+        if (!this[item]) {
+            this[item] = function () {
+                var args = Array.prototype.slice.call(arguments);
+                this.log.apply(this, args);
+                return this;
+            }.bind(this, item);
+        }
+    }, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return new Logger(config);
+    }
+
+    config = config || {};
+
+    this._mute = false;
+    this.config = _.merge({}, defaults, config);
+    this.<span class="apidocCodeKeywordSpan">addLevelMethods</span>(this.config.levels);
+    this.compiler = new tfunk.Compiler(this.config.custom || {}, this.config);
+    this._memo = {};
+
+    return this;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.canLog" id="apidoc.element.eazy-logger.Logger.prototype.canLog">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>canLog
+        <span class="apidocSignatureSpan">(level)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canLog = function (level) {
+    return this.config.levels[level] &gt;= this.config.levels[this.config.level] &amp;&amp; !this._mute;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {String} msg
+ * @param {String} level
+ * @param {boolean} [unprefixed]
+ * @returns {Logger}
+ */
+Logger.prototype.logOne = function (args, msg, level, unprefixed) {
+
+if (!this.<span class="apidocCodeKeywordSpan">canLog</span>(level)) {
+    return;
+}
+
+args = args.slice(2);
+
+if (this.config.useLevelPrefixes &amp;&amp; !unprefixed) {
+    msg = this.config.prefixes[level] + msg;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.clone" id="apidoc.element.eazy-logger.Logger.prototype.clone">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>clone
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (opts) {
+
+    var config = _.cloneDeep(this.config);
+
+    if (typeof opts === "function") {
+        config = opts(config) || {};
+    } else {
+        config = _.merge({}, config, opts || {});
+    }
+
+    return new Logger(config);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.log" id="apidoc.element.eazy-logger.Logger.prototype.log">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>log
+        <span class="apidocSignatureSpan">(level, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (level, msg) {
+
+    var args = Array.prototype.slice.call(arguments);
+
+    this.logOne(args, msg, level);
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+logger.error("an error occurred in file: {red:%s}", "/users/awesomedev/file.js");
+```
+
+```js
+/**
+ * Use string substitution + colours
+ */
+logger.<span class="apidocCodeKeywordSpan">log</span>("error", "Use {green:built-in} %s", "String substitution
+");
+```
+
+```js
+/**
+ * Set an option for the next log statement only
+ */
+logger.setOnce("useLevelPrefixes", true).warn("Use {green:built-in} %s", "String substitution");
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.logOne" id="apidoc.element.eazy-logger.Logger.prototype.logOne">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>logOne
+        <span class="apidocSignatureSpan">(args, msg, level, unprefixed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logOne = function (args, msg, level, unprefixed) {
+
+    if (!this.canLog(level)) {
+        return;
+    }
+
+    args = args.slice(2);
+
+    if (this.config.useLevelPrefixes &amp;&amp; !unprefixed) {
+        msg = this.config.prefixes[level] + msg;
+    }
+
+    msg = this.compiler.compile(msg, unprefixed);
+
+    args.unshift(msg);
+
+    console.log.apply(console, args);
+
+    this.resetTemps();
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {String} msg
+* @returns {Logger}
+*/
+Logger.prototype.log = function (level, msg) {
+
+   var args = Array.prototype.slice.call(arguments);
+
+   this.<span class="apidocCodeKeywordSpan">logOne</span>(args, msg, level);
+
+   return this;
+};
+
+/**
+* Set the log level
+* @param {String} level
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.mute" id="apidoc.element.eazy-logger.Logger.prototype.mute">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>mute
+        <span class="apidocSignatureSpan">(bool)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mute = function (bool) {
+
+    this._mute = bool;
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Reset the state of the logger.
+* @returns {Logger}
+*/
+Logger.prototype.reset = function () {
+
+   this.setLevel(defaults.level)
+       .setLevelPrefixes(defaults.useLevelPrefixes)
+       .<span class="apidocCodeKeywordSpan">mute</span>(false);
+
+   return this;
+};
+
+/**
+* @param {String} level
+* @returns {boolean}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.reset" id="apidoc.element.eazy-logger.Logger.prototype.reset">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+
+    this.setLevel(defaults.level)
+        .setLevelPrefixes(defaults.useLevelPrefixes)
+        .mute(false);
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.resetTemps" id="apidoc.element.eazy-logger.Logger.prototype.resetTemps">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>resetTemps
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resetTemps = function () {
+
+    Object.keys(this._memo).forEach(function (key) {
+        this.config[key] = this._memo[key];
+    }, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+   msg = this.compiler.compile(msg, unprefixed);
+
+   args.unshift(msg);
+
+   console.log.apply(console, args);
+
+   this.<span class="apidocCodeKeywordSpan">resetTemps</span>();
+
+   return this;
+};
+
+/**
+* Reset any temporary value
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.setLevel" id="apidoc.element.eazy-logger.Logger.prototype.setLevel">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>setLevel
+        <span class="apidocSignatureSpan">(level)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLevel = function (level) {
+
+    this.config.level = level;
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+/**
+ * Reset the state of the logger.
+ * @returns {Logger}
+ */
+Logger.prototype.reset = function () {
+
+    this.<span class="apidocCodeKeywordSpan">setLevel</span>(defaults.level)
+        .setLevelPrefixes(defaults.useLevelPrefixes)
+        .mute(false);
+
+    return this;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.setLevelPrefixes" id="apidoc.element.eazy-logger.Logger.prototype.setLevelPrefixes">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>setLevelPrefixes
+        <span class="apidocSignatureSpan">(state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLevelPrefixes = function (state) {
+
+    this.config.useLevelPrefixes = state;
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Reset the state of the logger.
+* @returns {Logger}
+*/
+Logger.prototype.reset = function () {
+
+   this.setLevel(defaults.level)
+       .<span class="apidocCodeKeywordSpan">setLevelPrefixes</span>(defaults.useLevelPrefixes)
+       .mute(false);
+
+   return this;
+};
+
+/**
+* @param {String} level
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.setOnce" id="apidoc.element.eazy-logger.Logger.prototype.setOnce">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>setOnce
+        <span class="apidocSignatureSpan">(path, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOnce = function (path, value) {
+
+    if (typeof this.config[path] !== "undefined") {
+
+        if (typeof this._memo[path] === "undefined") {
+            this._memo[path] = this.config[path];
+        }
+
+        this.config[path] = value;
+    }
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+logger.log("error", "Use {green:built-in} %s", "String substitution");
+```
+
+```js
+/**
+ * Set an option for the next log statement only
+ */
+logger.<span class="apidocCodeKeywordSpan">setOnce</span>("useLevelPrefixes", true).warn("Use {green:built-in} %s
+", "String substitution");
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.setPrefix" id="apidoc.element.eazy-logger.Logger.prototype.setPrefix">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>setPrefix
+        <span class="apidocSignatureSpan">(prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPrefix = function (prefix) {
+    if (typeof prefix === "string") {
+        this.compiler.prefix = this.compiler.compile(prefix, true);
+    }
+    if (typeof prefix === "function") {
+        this.compiler.prefix = prefix;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.Logger.prototype.unprefixed" id="apidoc.element.eazy-logger.Logger.prototype.unprefixed">
+        function <span class="apidocSignatureSpan">eazy-logger.Logger.prototype.</span>unprefixed
+        <span class="apidocSignatureSpan">(level, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unprefixed = function (level, msg) {
+
+    var args = Array.prototype.slice.call(arguments);
+
+    this.logOne(args, msg, level, true);
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eazy-logger.compile" id="apidoc.module.eazy-logger.compile">module eazy-logger.compile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.compile.compile" id="apidoc.element.eazy-logger.compile.compile">
+        function <span class="apidocSignatureSpan">eazy-logger.</span>compile
+        <span class="apidocSignatureSpan">(string, custom, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compile(string, custom, opts) {
+    opts = opts || {};
+    return parseAst(createAst(parser, string), custom, function (err) {
+        if (err) {
+            if (opts.logErrors) {
+                console.log(err.msg);
+            }
+            if (opts.failOnError) {
+                throw Error(err.msg);
+            }
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * @param prefix
+ */
+Logger.prototype.setPrefix = function (prefix) {
+    if (typeof prefix === "string") {
+        this.compiler.prefix = this.compiler.<span class="apidocCodeKeywordSpan">compile</span>(prefix, true);
+    }
+    if (typeof prefix === "function") {
+        this.compiler.prefix = prefix;
+    }
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.compile.Compiler" id="apidoc.element.eazy-logger.compile.Compiler">
+        function <span class="apidocSignatureSpan">eazy-logger.compile.</span>Compiler
+        <span class="apidocSignatureSpan">(custom, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Compiler(custom, opts) {
+
+    opts = opts || {};
+    custom = custom || {};
+
+    this.prefix = "";
+
+    if (typeof opts.prefix === "string") {
+        this.prefix = compile(opts.prefix, custom, opts);
+    }
+
+    if (typeof opts.prefix === "function") {
+        this.prefix = opts.prefix;
+    }
+
+    this.compile = function (string, noPrefix) {
+
+        var out = "";
+
+        if (!noPrefix) {
+
+            if (typeof this.prefix === "function") {
+                out = this.prefix.apply({compile: compile}, [string, opts]);
+            } else {
+                out = this.prefix;
+            }
+        }
+
+        return out + compile(string, custom, opts);
+
+    };
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   }
+
+   config = config || {};
+
+   this._mute = false;
+   this.config = _.merge({}, defaults, config);
+   this.addLevelMethods(this.config.levels);
+   this.compiler = new tfunk.<span class="apidocCodeKeywordSpan">Compiler</span>(this.config.custom || {}, this.config);
+   this._memo = {};
+
+   return this;
+};
+
+/**
+* Set an option once
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.compile.clean" id="apidoc.element.eazy-logger.compile.clean">
+        function <span class="apidocSignatureSpan">eazy-logger.compile.</span>clean
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clean = function (string) {
+    var ast = createAst(parser, string);
+    return ast.reduce(function (joined, item) {
+        if (item.color) {
+            if (item.text) {
+                return joined + item.text;
+            }
+        }
+        if (item.buffer) {
+            return joined + item.buffer;
+        }
+        if (item.reset) {
+            return joined + item.text;
+        }
+        return joined;
+    }, "");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.compile.parse" id="apidoc.element.eazy-logger.compile.parse">
+        function <span class="apidocSignatureSpan">eazy-logger.compile.</span>parse
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (string) {
+    return createAst(parser, string);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.eazy-logger.lodash_custom" id="apidoc.module.eazy-logger.lodash_custom">module eazy-logger.lodash_custom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.lodash_custom" id="apidoc.element.eazy-logger.lodash_custom.lodash_custom">
+        function <span class="apidocSignatureSpan">eazy-logger.</span>lodash_custom
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lodash() {
+  // No operation performed.
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom._" id="apidoc.element.eazy-logger.lodash_custom._">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lodash() {
+  // No operation performed.
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.cloneDeep" id="apidoc.element.eazy-logger.lodash_custom.cloneDeep">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>cloneDeep
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cloneDeep(value) {
+  return baseClone(value, true, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Clone the instance to share setup
+ * @param opts
+ * @returns {Logger}
+ */
+Logger.prototype.clone = function (opts) {
+
+var config = _.<span class="apidocCodeKeywordSpan">cloneDeep</span>(this.config);
+
+if (typeof opts === "function") {
+    config = opts(config) || {};
+} else {
+    config = _.merge({}, config, opts || {});
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.constant" id="apidoc.element.eazy-logger.lodash_custom.constant">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>constant
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function constant(value) {
+  return function() {
+    return value;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @since 2.4.0
+ * @category Util
+ * @param {*} value The value to return from the new function.
+ * @returns {Function} Returns the new constant function.
+ * @example
+ *
+ * var object = { 'user': 'fred' };
+ * var getter = _.<span class="apidocCodeKeywordSpan">constant</span>(object);
+ *
+ * getter() === object;
+ * // =&gt; true
+ */
+function constant(value) {
+  return function() {
+    return value;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.eq" id="apidoc.element.eazy-logger.lodash_custom.eq">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>eq
+        <span class="apidocSignatureSpan">(value, other)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function eq(value, other) {
+  return value === other || (value !== value &amp;&amp; other !== other);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {*} other The other value to compare.
+* @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+* @example
+*
+* var object = { 'user': 'fred' };
+* var other = { 'user': 'fred' };
+*
+* _.<span class="apidocCodeKeywordSpan">eq</span>(object, object);
+* // =&gt; true
+*
+* _.eq(object, other);
+* // =&gt; false
+*
+* _.eq('a', 'a');
+* // =&gt; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isArguments" id="apidoc.element.eazy-logger.lodash_custom.isArguments">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isArguments
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArguments(value) {
+  // Safari 8.1 incorrectly makes `arguments.callee` enumerable in strict mode.
+  return isArrayLikeObject(value) &amp;&amp; hasOwnProperty.call(value, 'callee') &amp;&amp;
+    (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isArguments</span>(function() { return arguments; }());
+ * // =&gt; true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // =&gt; false
+ */
+function isArguments(value) {
+  // Safari 8.1 incorrectly makes `arguments.callee` enumerable in strict mode.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isArray" id="apidoc.element.eazy-logger.lodash_custom.isArray">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * // Returns an unwrapped value.
+ * wrapped.reduce(_.add);
+ * // =&gt; 6
+ *
+ * // Returns a wrapped value.
+ * var squares = wrapped.map(square);
+ *
+ * _.<span class="apidocCodeKeywordSpan">isArray</span>(squares);
+ * // =&gt; false
+ *
+ * _.isArray(squares.value());
+ * // =&gt; true
+ */
+function lodash() {
+  // No operation performed.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isArrayLike" id="apidoc.element.eazy-logger.lodash_custom.isArrayLike">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isArrayLike
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArrayLike(value) {
+  return value != null &amp;&amp; isLength(getLength(value)) &amp;&amp; !isFunction(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isArrayLike</span>([1, 2, 3]);
+* // =&gt; true
+*
+* _.isArrayLike(document.body.children);
+* // =&gt; true
+*
+* _.isArrayLike('abc');
+* // =&gt; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isArrayLikeObject" id="apidoc.element.eazy-logger.lodash_custom.isArrayLikeObject">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isArrayLikeObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArrayLikeObject(value) {
+  return isObjectLike(value) &amp;&amp; isArrayLike(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is an array-like object,
+*  else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isArrayLikeObject</span>([1, 2, 3]);
+* // =&gt; true
+*
+* _.isArrayLikeObject(document.body.children);
+* // =&gt; true
+*
+* _.isArrayLikeObject('abc');
+* // =&gt; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isBuffer" id="apidoc.element.eazy-logger.lodash_custom.isBuffer">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isBuffer
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isBuffer = function (value) {
+  return value instanceof Buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isBuffer</span>(new Buffer(2));
+ * // =&gt; true
+ *
+ * _.isBuffer(new Uint8Array(2));
+ * // =&gt; false
+ */
+var isBuffer = !Buffer ? constant(false) : function(value) {
+  return value instanceof Buffer;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isFunction" id="apidoc.element.eazy-logger.lodash_custom.isFunction">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isFunction
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 8 which returns 'object' for typed array and weak map constructors,
+  // and PhantomJS 1.9 which returns 'function' for `NodeList` instances.
+  var tag = isObject(value) ? objectToString.call(value) : '';
+  return tag == funcTag || tag == genTag;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isFunction</span>(_);
+ * // =&gt; true
+ *
+ * _.isFunction(/abc/);
+ * // =&gt; false
+ */
+function isFunction(value) {
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isLength" id="apidoc.element.eazy-logger.lodash_custom.isLength">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isLength
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isLength(value) {
+  return typeof value == 'number' &amp;&amp;
+    value &gt; -1 &amp;&amp; value % 1 == 0 &amp;&amp; value &lt;= MAX_SAFE_INTEGER;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is a valid length,
+*  else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isLength</span>(3);
+* // =&gt; true
+*
+* _.isLength(Number.MIN_VALUE);
+* // =&gt; false
+*
+* _.isLength(Infinity);
+* // =&gt; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isNative" id="apidoc.element.eazy-logger.lodash_custom.isNative">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isNative
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNative(value) {
+  if (!isObject(value)) {
+    return false;
+  }
+  var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isNative</span>(Array.prototype.push);
+ * // =&gt; true
+ *
+ * _.isNative(_);
+ * // =&gt; false
+ */
+function isNative(value) {
+  if (!isObject(value)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isObject" id="apidoc.element.eazy-logger.lodash_custom.isObject">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isObject(value) {
+  var type = typeof value;
+  return !!value &amp;&amp; (type == 'object' || type == 'function');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 0.1.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is an object, else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isObject</span>({});
+* // =&gt; true
+*
+* _.isObject([1, 2, 3]);
+* // =&gt; true
+*
+* _.isObject(_.noop);
+* // =&gt; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isObjectLike" id="apidoc.element.eazy-logger.lodash_custom.isObjectLike">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isObjectLike
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isObjectLike(value) {
+  return !!value &amp;&amp; typeof value == 'object';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to check.
+* @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">isObjectLike</span>({});
+* // =&gt; true
+*
+* _.isObjectLike([1, 2, 3]);
+* // =&gt; true
+*
+* _.isObjectLike(_.noop);
+* // =&gt; false
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isPlainObject" id="apidoc.element.eazy-logger.lodash_custom.isPlainObject">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isPlainObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isPlainObject(value) {
+  if (!isObjectLike(value) ||
+      objectToString.call(value) != objectTag || isHostObject(value)) {
+    return false;
+  }
+  var proto = getPrototype(value);
+  if (proto === null) {
+    return true;
+  }
+  var Ctor = hasOwnProperty.call(proto, 'constructor') &amp;&amp; proto.constructor;
+  return (typeof Ctor == 'function' &amp;&amp;
+    Ctor instanceof Ctor &amp;&amp; funcToString.call(Ctor) == objectCtorString);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*  else `false`.
+* @example
+*
+* function Foo() {
+*   this.a = 1;
+* }
+*
+* _.<span class="apidocCodeKeywordSpan">isPlainObject</span>(new Foo);
+* // =&gt; false
+*
+* _.isPlainObject([1, 2, 3]);
+* // =&gt; false
+*
+* _.isPlainObject({ 'x': 0, 'y': 0 });
+* // =&gt; true
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isString" id="apidoc.element.eazy-logger.lodash_custom.isString">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isString
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isString(value) {
+  return typeof value == 'string' ||
+    (!isArray(value) &amp;&amp; isObjectLike(value) &amp;&amp; objectToString.call(value) == stringTag);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @memberOf _
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isString</span>('abc');
+ * // =&gt; true
+ *
+ * _.isString(1);
+ * // =&gt; false
+ */
+function isString(value) {
+  return typeof value == 'string' ||
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isSymbol" id="apidoc.element.eazy-logger.lodash_custom.isSymbol">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isSymbol
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) &amp;&amp; objectToString.call(value) == symbolTag);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isSymbol</span>(Symbol.iterator);
+ * // =&gt; true
+ *
+ * _.isSymbol('abc');
+ * // =&gt; false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.isTypedArray" id="apidoc.element.eazy-logger.lodash_custom.isTypedArray">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>isTypedArray
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isTypedArray(value) {
+  return isObjectLike(value) &amp;&amp;
+    isLength(value.length) &amp;&amp; !!typedArrayTags[objectToString.call(value)];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is correctly classified,
+ *  else `false`.
+ * @example
+ *
+ * _.<span class="apidocCodeKeywordSpan">isTypedArray</span>(new Uint8Array);
+ * // =&gt; true
+ *
+ * _.isTypedArray([]);
+ * // =&gt; false
+ */
+function isTypedArray(value) {
+  return isObjectLike(value) &amp;&amp;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.keys" id="apidoc.element.eazy-logger.lodash_custom.keys">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>keys
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function keys(object) {
+  var isProto = isPrototype(object);
+  if (!(isProto || isArrayLike(object))) {
+    return baseKeys(object);
+  }
+  var indexes = indexKeys(object),
+      skipIndexes = !!indexes,
+      result = indexes || [],
+      length = result.length;
+
+  for (var key in object) {
+    if (baseHas(object, key) &amp;&amp;
+        !(skipIndexes &amp;&amp; (key == 'length' || isIndex(key, length))) &amp;&amp;
+        !(isProto &amp;&amp; key == 'constructor')) {
+      result.push(key);
+    }
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * logger.info("msg")
+ *
+ * instead of
+ * logger.log("warn", "msg");
+ * @param items
+ */
+Logger.prototype.addLevelMethods = function (items) {
+Object.<span class="apidocCodeKeywordSpan">keys</span>(items).forEach(function (item) {
+    if (!this[item]) {
+        this[item] = function () {
+            var args = Array.prototype.slice.call(arguments);
+            this.log.apply(this, args);
+            return this;
+        }.bind(this, item);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.keysIn" id="apidoc.element.eazy-logger.lodash_custom.keysIn">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>keysIn
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function keysIn(object) {
+  var index = -1,
+      isProto = isPrototype(object),
+      props = baseKeysIn(object),
+      propsLength = props.length,
+      indexes = indexKeys(object),
+      skipIndexes = !!indexes,
+      result = indexes || [],
+      length = result.length;
+
+  while (++index &lt; propsLength) {
+    var key = props[index];
+    if (!(skipIndexes &amp;&amp; (key == 'length' || isIndex(key, length))) &amp;&amp;
+        !(key == 'constructor' &amp;&amp; (isProto || !hasOwnProperty.call(object, key)))) {
+      result.push(key);
+    }
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.<span class="apidocCodeKeywordSpan">keysIn</span>(new Foo);
+ * // =&gt; ['a', 'b', 'c'] (iteration order is not guaranteed)
+ */
+function keysIn(object) {
+  var index = -1,
+      isProto = isPrototype(object),
+      props = baseKeysIn(object),
+      propsLength = props.length,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.merge" id="apidoc.element.eazy-logger.lodash_custom.merge">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>merge
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function () {
+  var args = arguments,
+      index = -1,
+      length = nativeMax(args.length - start, 0),
+      array = Array(length);
+
+  while (++index &lt; length) {
+    array[index] = args[start + index];
+  }
+  switch (start) {
+    case 0: return func.call(this, array);
+    case 1: return func.call(this, args[0], array);
+    case 2: return func.call(this, args[0], args[1], array);
+  }
+  var otherArgs = Array(start + 1);
+  index = -1;
+  while (++index &lt; start) {
+    otherArgs[index] = args[index];
+  }
+  otherArgs[start] = array;
+  return apply(func, this, otherArgs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (!(this instanceof Logger)) {
+        return new Logger(config);
+    }
+
+    config = config || {};
+
+    this._mute = false;
+    this.config = _.<span class="apidocCodeKeywordSpan">merge</span>({}, defaults, config);
+    this.addLevelMethods(this.config.levels);
+    this.compiler = new tfunk.Compiler(this.config.custom || {}, this.config);
+    this._memo = {};
+
+    return this;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.rest" id="apidoc.element.eazy-logger.lodash_custom.rest">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>rest
+        <span class="apidocSignatureSpan">(func, start)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rest(func, start) {
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  start = nativeMax(start === undefined ? (func.length - 1) : toInteger(start), 0);
+  return function() {
+    var args = arguments,
+        index = -1,
+        length = nativeMax(args.length - start, 0),
+        array = Array(length);
+
+    while (++index &lt; length) {
+      array[index] = args[start + index];
+    }
+    switch (start) {
+      case 0: return func.call(this, array);
+      case 1: return func.call(this, args[0], array);
+      case 2: return func.call(this, args[0], args[1], array);
+    }
+    var otherArgs = Array(start + 1);
+    index = -1;
+    while (++index &lt; start) {
+      otherArgs[index] = args[index];
+    }
+    otherArgs[start] = array;
+    return apply(func, this, otherArgs);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @since 4.0.0
+* @category Function
+* @param {Function} func The function to apply a rest parameter to.
+* @param {number} [start=func.length-1] The start position of the rest parameter.
+* @returns {Function} Returns the new function.
+* @example
+*
+* var say = _.<span class="apidocCodeKeywordSpan">rest</span>(function(what, names) {
+*   return what + ' ' + _.initial(names).join(', ') +
+*     (_.size(names) &gt; 1 ? ', &amp; ' : '') + _.last(names);
+* });
+*
+* say('hello', 'fred', 'barney', 'pebbles');
+* // =&gt; 'hello fred, barney, &amp; pebbles'
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.toFinite" id="apidoc.element.eazy-logger.lodash_custom.toFinite">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>toFinite
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+  value = toNumber(value);
+  if (value === INFINITY || value === -INFINITY) {
+    var sign = (value &lt; 0 ? -1 : 1);
+    return sign * MAX_INTEGER;
+  }
+  return value === value ? value : 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.12.0
+* @category Lang
+* @param {*} value The value to convert.
+* @returns {number} Returns the converted number.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">toFinite</span>(3.2);
+* // =&gt; 3.2
+*
+* _.toFinite(Number.MIN_VALUE);
+* // =&gt; 5e-324
+*
+* _.toFinite(Infinity);
+* // =&gt; 1.7976931348623157e+308
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.toInteger" id="apidoc.element.eazy-logger.lodash_custom.toInteger">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>toInteger
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toInteger(value) {
+  var result = toFinite(value),
+      remainder = result % 1;
+
+  return result === result ? (remainder ? result - remainder : result) : 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to convert.
+* @returns {number} Returns the converted integer.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">toInteger</span>(3.2);
+* // =&gt; 3
+*
+* _.toInteger(Number.MIN_VALUE);
+* // =&gt; 0
+*
+* _.toInteger(Infinity);
+* // =&gt; 1.7976931348623157e+308
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.toNumber" id="apidoc.element.eazy-logger.lodash_custom.toNumber">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>toNumber
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = isFunction(value.valueOf) ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @memberOf _
+* @since 4.0.0
+* @category Lang
+* @param {*} value The value to process.
+* @returns {number} Returns the number.
+* @example
+*
+* _.<span class="apidocCodeKeywordSpan">toNumber</span>(3.2);
+* // =&gt; 3.2
+*
+* _.toNumber(Number.MIN_VALUE);
+* // =&gt; 5e-324
+*
+* _.toNumber(Infinity);
+* // =&gt; Infinity
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.eazy-logger.lodash_custom.toPlainObject" id="apidoc.element.eazy-logger.lodash_custom.toPlainObject">
+        function <span class="apidocSignatureSpan">eazy-logger.lodash_custom.</span>toPlainObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toPlainObject(value) {
+  return copyObject(value, keysIn(value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.assign({ 'a': 1 }, new Foo);
+ * // =&gt; { 'a': 1, 'b': 2 }
+ *
+ * _.assign({ 'a': 1 }, _.<span class="apidocCodeKeywordSpan">toPlainObject</span>(new Foo));
+ * // =&gt; { 'a': 1, 'b': 2, 'c': 3 }
+ */
+function toPlainObject(value) {
+  return copyObject(value, keysIn(value));
+}
+
+/*------------------------------------------------------------------------*/
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
